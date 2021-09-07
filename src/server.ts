@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import MainRouter from './routers/GameRouter';
 import pool from './dbconfig/dbconnector';
 import cors from 'cors';
+import PicturesController from './controllers/PicturesController';
 
 class Server {
     private app;
@@ -31,6 +32,7 @@ class Server {
 
     private routerConfig() {
         this.app.use('/game', MainRouter);
+        this.app.use('/pictures/:filename', new PicturesController().get)
     }
 
     public start = (port: number) => {
