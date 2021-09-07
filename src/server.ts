@@ -1,7 +1,8 @@
 import express, { Application, Router } from 'express';
 import bodyParser from 'body-parser';
-import MainRouter from './routers/MainRouter';
+import MainRouter from './routers/GameRouter';
 import pool from './dbconfig/dbconnector';
+import cors from 'cors';
 
 class Server {
     private app;
@@ -14,19 +15,22 @@ class Server {
     }
 
     private config() {
-        this.app.use(bodyParser.urlencoded({ extended:true }));
-        this.app.use(bodyParser.json({ limit: '1mb' })); // 100kb default
+        this.app.use(bodyParser.urlencoded({ extended: true }));
+        this.app.use(bodyParser.json({ limit: '1mb' }));
+        this.app.use(cors({
+            origin: "*"
+        }));
     }
 
     private dbConnect() {
         pool.connect(function (err, client, done) {
             if (err) throw new Error(err);
             console.log('Connected');
-          }); 
+        });
     }
 
     private routerConfig() {
-        this.app.use('/main', MainRouter);
+        this.app.use('/game', MainRouter);
     }
 
     public start = (port: number) => {
