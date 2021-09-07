@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
-    "esModuleInterop": true,
-    "outDir": "dist",
-    "baseUrl": "."
-  }
-}
+  "module": "commonjs",
+  "esModuleInterop": true,
+  "target": "es6",
+  "moduleResolution": "node",
+  "sourceMap": true,
+  "outDir": "dist/src"
+ },
+  "lib": ["es2015"]
+ }
