@@ -6,6 +6,7 @@ const gameController = new GameController();
 
 router.get('/', gameController.get);
 router.get('/popular', gameController.getPopular);
+router.get('/:id', gameController.getById);
 
 
 export default router;

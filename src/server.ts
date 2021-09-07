@@ -1,6 +1,8 @@
 import express, { Application, Router } from 'express';
 import bodyParser from 'body-parser';
 import MainRouter from './routers/GameRouter';
+import AwardRouter from './routers/AwardRouter';
+import PlayerRouter from './routers/PlayerRouter';
 import pool from './dbconfig/dbconnector';
 import cors from 'cors';
 import PicturesController from './controllers/PicturesController';
@@ -32,6 +34,8 @@ class Server {
 
     private routerConfig() {
         this.app.use('/game', MainRouter);
+        this.app.use('/award', AwardRouter);
+        this.app.use('/player', PlayerRouter);
         this.app.use('/pictures/:filename', new PicturesController().get)
     }
 
