@@ -2,9 +2,10 @@
   "name": "cmx.playzone-back",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "start": "node ."
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,8 @@
   "homepage": "https://github.com/dyagilevart/cmx.playzone-back#readme",
   "devDependencies": {
     "typescript": "^4.4.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
