@@ -1,0 +1,22 @@
+{
+  "name": "cmx.playzone-back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dyagilevart/cmx.playzone-back.git"
+  },
+  "author": "Denis Dyagilev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dyagilevart/cmx.playzone-back/issues"
+  },
+  "homepage": "https://github.com/dyagilevart/cmx.playzone-back#readme",
+  "devDependencies": {
+    "typescript": "^4.4.2"
+  }
+}
