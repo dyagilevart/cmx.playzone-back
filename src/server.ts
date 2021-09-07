@@ -6,15 +6,18 @@ import PlayerRouter from './routers/PlayerRouter';
 import pool from './dbconfig/dbconnector';
 import cors from 'cors';
 import PicturesController from './controllers/PicturesController';
+import Bot from './bot/bot';
 
 class Server {
     private app;
+    private bot;
 
     constructor() {
         this.app = express();
         this.config();
         this.routerConfig();
         this.dbConnect();
+        this.bot = new Bot();
     }
 
     private config() {
@@ -23,6 +26,7 @@ class Server {
         this.app.use(cors({
             origin: "*"
         }));
+
     }
 
     private dbConnect() {
